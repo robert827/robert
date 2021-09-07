@@ -40,7 +40,7 @@ def triple_multiply(n1, n2, n3):
 
 
 def triple_plus1(n1, n2, n3):
-    value = (n1+0.000001)/(n2+n3)
+    value = n1/(n2+n3)
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -52,7 +52,7 @@ def triple_minus1(n1, n2, n3):
 
 
 def triple_divide(n1, n2, n3):
-    value = (n1+0.000001)/(n2*n3)
+    value = n1/(n2*n3)
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -64,7 +64,7 @@ def triple_minusmultiply(n1, n2, n3):
 
 
 def triple_plusmultiply(n1, n2, n3):
-    value = (n1+n2+0.000001)*n3
+    value = (n1+n2)*n3
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -82,7 +82,7 @@ def triple_plusdivide(n1, n2, n3):
 
 
 def triple_multiplydivide(n1, n2, n3):
-    value = (n1*n2+0.000001)/n3
+    value = (n1*n2)/n3
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -91,7 +91,8 @@ def triple_totaldivide(n1, n2, n3):
     value = 1/(n1*n2*n3)
     p = stats.pearsonr(value, substance)
     return abs(p[0])
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 def triple_lnplus(n1, n2, n3):
     value = np.log(n1+n2+n3)
@@ -112,7 +113,7 @@ def triple_lnmultiply(n1, n2, n3):
 
 
 def triple_lnplus1(n1, n2, n3):
-    value = np.log((n1+0.000001)/(n2+n3))
+    value = np.log(n1/(n2+n3))
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -124,7 +125,7 @@ def triple_lnminus1(n1, n2, n3):
 
 
 def triple_lndivide(n1, n2, n3):
-    value = np.log((n1+0.000001)/(n2*n3))
+    value = np.log(n1/(n2*n3))
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -136,7 +137,7 @@ def triple_lnminusmultiply(n1, n2, n3):
 
 
 def triple_lnplusmultiply(n1, n2, n3):
-    value = np.log((n1+n2+0.000001)*n3)
+    value = np.log((n1+n2)*n3)
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
@@ -148,15 +149,17 @@ def triple_lnplusdivide(n1, n2, n3):
 
 
 def triple_lnmultiplydivide(n1, n2, n3):
-    value = np.log(((n1*n2)+0.000001)/n3)
+    value = np.log((n1*n2)/n3)
     p = stats.pearsonr(value, substance)
     return abs(p[0])
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 def normal(value):
     p = stats.pearsonr(value, substance)
     return abs(p[0])
+
 
 def plus(n1, n2):
     value = n1+n2
